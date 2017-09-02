@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hangman</title>
+        <link rel="stylesheet" href="assets/reset.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/style.css">
+        <!-- <link rel="author" href="humans.txt"> -->
+    </head>
+    <body>
+    	<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">Patrick Fain</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+      			</button>
+
+      			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+        				<span class="navbar-text mr-auto"></span>
+        				<ul class="navbar-nav">
+          					<li class="nav-item">
+            					<a class="nav-link" href="index.html">About</a>
+          					</li>
+          					<li class="nav-item">
+            						<a class="nav-link" href="portfolio.html">Portfolio</a>
+          					</li>
+          					<li class="nav-item">
+           					<a class="nav-link" href="contact.html">Contact<span class="sr-only">(current)</span></a>
+          					</li>
+        				</ul>
+      			</div>
+      		</div>
+	</nav>
+
+	<main class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 material">
+				<div class="row">
+					<div class="col-6 dynamic-img">
+						<img class="img-fluid" id="dynamic" src="hangmanimgs/base.png" alt="this image should change as mistakes are made">
+					</div>
+					<div class="col-6 static-img">
+                                <img class="img-fluid" id="static-base" src="hangmanimgs/base.png" alt="this image should be on the first of the fixed position stack">
+						 <img class="img-fluid" id="static-1" src="hangmanimgs/head.png" alt="this image should be on the first of the fixed position stack">
+						 <img class="img-fluid" id="static-2" src="hangmanimgs/body.png" alt="this image should be on the second of the fixed position stack">
+						 <img class="img-fluid" id="static-3" src="hangmanimgs/ArmL.png" alt="this image should be on the third of the fixed position stack">
+						 <img class="img-fluid" id="static-4" src="hangmanimgs/ArmR.png" alt="this image should be on the fourth of the fixed position stack">
+						 <img class="img-fluid" id="static-5" src="hangmanimgs/LegL.png" alt="this image should be on the fifth of the fixed position stack">
+						 <img class="img-fluid" id="static-6" src="hangmanimgs/LegR.png" alt="this image should be on the sixth of the fixed position stack">
+					</div>
+				</div>
+                          <div class="row">
+                                <!-- used to show letters selected, fill in word, -->
+                          </div>
+                      <div class="row input">
+                          <div class="col-12">
+                                <label class="hm-submit">Type a letter and then click submit button.</label>
+                                <input class="hm-submit" type="text" id="submit-text" name="letterSelect" value="" >
+                                <button class="btn btn-primary hm-submit" id="submit" type="submit">Submit</button>
+                          </div>
+                      </div>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+				<div class="card" style="width: 100%;">
+          		  			<div class="card-body">
+          	    					<div class="row">
+          	      					<h4 class="card-title">Contact Me</h4>
+          	    					</div>
+              					<div class="row">
+                					<div class="col-4">
+                  						<a  href="https://github.com/fain704" target="_blank">
+                    						  <img class="img-fluid" src="images/github.png" alt="github link">    
+                  						</a>
+                					</div>
+                					<div class="col-4">
+                  						<a href="https://www.linkedin.com/in/patrick-fain-ab3752b1/" target="_blank">
+                    						  <img class="img-fluid" src="images/linkedin.png" alt="linkedin link">    
+                  						</a>
+                					</div>
+                					<div class="col-4">
+                  						<a href="https://stackexchange.com/users/11488063/patrick-fain" target="_blank">
+                    								<img class="img-fluid" src="images/overstack.png" alt="overstack link">    
+                  						</a>
+                					</div>
+                				</div>
+            				</div>
+          				</div>	
+			</div>
+		</div>     
+	</main>
+
+
+	<footer class="footer fixed-bottom">
+		<div class="row">
+ 			<div class="col-12">
+ 			 	<figure class="text-muted" align="center">
+           				 &copy Copyright 2017 Patrick Fain
+				</figure>
+        			</div>
+      		</div>
+	</footer>
+        
+        <script src="javascript.js"></script>
+    </body>
+</html>
