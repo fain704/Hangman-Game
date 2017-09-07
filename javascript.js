@@ -1,6 +1,18 @@
 
 //document.getElementById("imageid").src="../template/save.png";
 
+//initialiaze randWord
+// var randWord = ["DOG", "CAT", "HUMAN", "GIRRAFFE", "ZEBRA", "OWL", "TIGER", "LION", "ELEPHANT"];
+
+// computer picks random word
+// var selectedWord = Math.floor(Math.rand * randWord.length);
+
+// set blank spaces in HTML
+//for (i=0; i<selectedWord.length; i++){
+// document.getElementById()
+//}
+
+
 //initial word array
 var word = ["H", "A", "N", "G", "M", "A", "N"];
 var userAnswer;
