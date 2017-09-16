@@ -2,15 +2,22 @@
 //document.getElementById("imageid").src="../template/save.png";
 
 //initialiaze randWord
-// var randWord = ["DOG", "CAT", "HUMAN", "GIRRAFFE", "ZEBRA", "OWL", "TIGER", "LION", "ELEPHANT"];
+var randWord = ["DOG", "CAT", "HUMAN", "GIRRAFFE", "ZEBRA", "OWL", "TIGER", "LION", "ELEPHANT"];
 
 // computer picks random word
-// var selectedWord = Math.floor(Math.rand * randWord.length);
+// var selectedWord = randWord[Math.floor(Math.rand * randWord.length)];
 
+// console.log(selectedWord);
 // set blank spaces in HTML
-//for (i=0; i<selectedWord.length; i++){
-// document.getElementById()
-//}
+
+// function startGame() {
+// 	for (i = 0; i < randWord.length; i++) {
+// 		answerArr[i] = "_";
+// 	}
+
+// 	s = answerArr.join(" ");
+// 	document.getElementById("correct").innerHTML = s;
+// }
 
 
 //initial word array
@@ -26,14 +33,14 @@ document.onkeypress = function(event) {
 	userAnswer = event.key.toUpperCase();
 	// console.log(userAnswer);
 	//compare to aray (index of x)
-validAnswer = word.indexOf(userAnswer);
+	validAnswer = word.indexOf(userAnswer);
 	// console.log(validAnswer);
 	//if return -1 advance error
-if (validAnswer === -1) {
-	error = error + 1;
-	// write incorrect letters to wrong p tag 
-	document.getElementById("wrong").innerHTML = document.getElementById("wrong").innerHTML + userAnswer;
-	// console.log(error);
+	if (validAnswer === -1) {
+		error = error + 1;
+		// write incorrect letters to wrong p tag 
+		document.getElementById("wrong").innerHTML = document.getElementById("wrong").innerHTML + userAnswer;
+		// console.log(error);
 	} else if (validAnswer === 0) {
 		document.getElementById("correct0").innerHTML = word[validAnswer];
 		answerKey[0] = "H"
@@ -79,65 +86,47 @@ if (answerKey.toString() === word.toString()) {
 
 
 
-if (error === 1) {
-	document.getElementById("dynamic").src="hangmanimgs/head.png";
-	document.getElementById("static-1").style.opacity=1.0;
-} else if (error === 2) {
-	document.getElementById("dynamic").src="hangmanimgs/body.png";
-	document.getElementById("static-2").style.opacity=1.0;
-} else if (error === 3) {
-	document.getElementById("dynamic").src="hangmanimgs/ArmL.png";
-	document.getElementById("static-3").style.opacity=1.0;
-} else if (error === 4) {
-	document.getElementById("dynamic").src="hangmanimgs/ArmR.png";
-	document.getElementById("static-4").style.opacity=1.0;
-} else if (error === 5) {
-	document.getElementById("dynamic").src="hangmanimgs/LegL.png";
-	document.getElementById("static-5").style.opacity=1.0;
-} else if (error === 6) {
-	document.getElementById("dynamic").src="hangmanimgs/LegR.png";
-	document.getElementById("static-6").style.opacity=1.0;
-} else if (error >= 6) {
-	var tryAgain = confirm("You lose would you like to play again?")
-		if (tryAgain === true) {
-	error = 0;
-	answerKey = [0, 0, 0, 0, 0, 0, 0];
-	document.getElementById("wrong").innerHTML = "";
-	document.getElementById("correct0").innerHTML = "";
-	document.getElementById("correct1").innerHTML = "";
-	document.getElementById("correct2").innerHTML = "";
-	document.getElementById("correct3").innerHTML = "";
-	document.getElementById("correct4").innerHTML = "";
-	document.getElementById("correct5").innerHTML = "";
-	document.getElementById("correct6").innerHTML = "";
-	document.getElementById("dynamic").src="hangmanimgs/base.png";
-	document.getElementById("static-1").style.opacity=0.0;
-	document.getElementById("static-2").style.opacity=0.0;
-	document.getElementById("static-3").style.opacity=0.0;
-	document.getElementById("static-4").style.opacity=0.0;
-	document.getElementById("static-5").style.opacity=0.0;
-	document.getElementById("static-6").style.opacity=0.0;
-		} else if (tryAgain === false) {
+	if (error === 1) {
+		document.getElementById("dynamic").src="hangmanimgs/head.png";
+		document.getElementById("static-1").style.opacity=1.0;
+	} else if (error === 2) {
+		document.getElementById("dynamic").src="hangmanimgs/body.png";
+		document.getElementById("static-2").style.opacity=1.0;
+	} else if (error === 3) {
+		document.getElementById("dynamic").src="hangmanimgs/ArmL.png";
+		document.getElementById("static-3").style.opacity=1.0;
+	} else if (error === 4) {
+		document.getElementById("dynamic").src="hangmanimgs/ArmR.png";
+		document.getElementById("static-4").style.opacity=1.0;
+	} else if (error === 5) {
+		document.getElementById("dynamic").src="hangmanimgs/LegL.png";
+		document.getElementById("static-5").style.opacity=1.0;
+	} else if (error === 6) {
+		document.getElementById("dynamic").src="hangmanimgs/LegR.png";
+		document.getElementById("static-6").style.opacity=1.0;
+	} else if (error >= 6) {
+		var tryAgain = confirm("You lose would you like to play again?")
+		 if (!tryAgain ) {
 			alert("Like you have a choice.")
-	error = 0;
-	answerKey = [0, 0, 0, 0, 0, 0, 0];
-	document.getElementById("wrong").innerHTML = "";
-	document.getElementById("correct0").innerHTML = "";
-	document.getElementById("correct1").innerHTML = "";
-	document.getElementById("correct2").innerHTML = "";
-	document.getElementById("correct3").innerHTML = "";
-	document.getElementById("correct4").innerHTML = "";
-	document.getElementById("correct5").innerHTML = "";
-	document.getElementById("correct6").innerHTML = "";
-	document.getElementById("dynamic").src="hangmanimgs/base.png";
-	document.getElementById("static-1").style.opacity=0.0;
-	document.getElementById("static-2").style.opacity=0.0;
-	document.getElementById("static-3").style.opacity=0.0;
-	document.getElementById("static-4").style.opacity=0.0;
-	document.getElementById("static-5").style.opacity=0.0;
-	document.getElementById("static-6").style.opacity=0.0;
 		}
-}
+		error = 0;
+		answerKey = [0, 0, 0, 0, 0, 0, 0];
+		document.getElementById("wrong").innerHTML = "";
+		document.getElementById("correct0").innerHTML = "";
+		document.getElementById("correct1").innerHTML = "";
+		document.getElementById("correct2").innerHTML = "";
+		document.getElementById("correct3").innerHTML = "";
+		document.getElementById("correct4").innerHTML = "";
+		document.getElementById("correct5").innerHTML = "";
+		document.getElementById("correct6").innerHTML = "";
+		document.getElementById("dynamic").src="hangmanimgs/base.png";
+		document.getElementById("static-1").style.opacity=0.0;
+		document.getElementById("static-2").style.opacity=0.0;
+		document.getElementById("static-3").style.opacity=0.0;
+		document.getElementById("static-4").style.opacity=0.0;
+		document.getElementById("static-5").style.opacity=0.0;
+		document.getElementById("static-6").style.opacity=0.0;
+	}
 // console.log(tryAgain);
 
 };
