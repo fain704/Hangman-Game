@@ -17,7 +17,7 @@
 
 		//select word
 		answer = possibleAnswers[Math.floor(Math.random()*possibleAnswers.length)];
-		console.log(answer);
+		// console.log(answer);
 		//create answerKey
 		for (var i = 0; i < answer.length; i++) {
 			answerKey.push ("_");
@@ -46,7 +46,7 @@
 				return;
 			};
 			error++;
-			console.log("error" , error);
+			// console.log("error" , error);
 			badLetters.push(userAnswer);
 			// console.log("badLetters" , badLetters);
 			document.getElementById("wrong").innerHTML = badLetters;
@@ -68,8 +68,8 @@
 		document.getElementById("correct").innerHTML = answerKey;
 
 		// console.log("answer " , answer);
-		console.log("answerKey ", answerKey);
-		console.log("answerArr ", answerArr);
+		// console.log("answerKey ", answerKey);
+		// console.log("answerArr ", answerArr);
 
 		
 
