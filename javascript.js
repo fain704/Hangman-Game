@@ -5,7 +5,8 @@
 	var answerArr;
 	var badLetters;
 	var error;
-	var winLoss = [0,0];
+	var wins = 0;
+	var losses = 0;
 
 	function gameStart(){
 		///set/reset variables
@@ -25,7 +26,7 @@
 
 		//push answer key to HTML
 		document.getElementById("correct").innerHTML = answerKey;
-		document.getElementById("winLoss").innerHTML = "Wins: " + winLoss[0] + " Losses: " + winLoss[1];
+		// document.getElementById("winLoss").innerHTML = "Wins: " + wins + " Losses: " + losses;
 	}
 
 	//initialize game
@@ -66,22 +67,24 @@
 		document.getElementById("correct").innerHTML = answerKey;
 
 		// console.log("answer " , answer);
-		// console.log("answerKey ", answerKey);
-		// console.log("answerArr ", answerArr);
+		console.log("answerKey ", answerKey);
+		console.log("answerArr ", answerArr);
 
 		//evaluate if answer = answerKey, if true alert "you win", increment wins, reset game
 		//evaluate if error >= 6, if true alert "you lose", increment losses, reset game
 
-		if (answerKey===answerArr) {
+		
+	}; 
+
+	if (answerKey===answerArr) {
 			alert("you win");
-			winLoss[0]++;
+			wins++;
 			gameStart()
 		} else if (error >= 6) {
 			alert("you lose")
-			winLoss[1]++;
+			losses++;
 			gameStart()
 		};
-	}; 
 
 
 
