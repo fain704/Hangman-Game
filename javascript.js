@@ -26,7 +26,8 @@
 
 		//push answer key to HTML
 		document.getElementById("correct").innerHTML = answerKey;
-		// document.getElementById("winLoss").innerHTML = "Wins: " + wins + " Losses: " + losses;
+		document.getElementById("winLoss").innerHTML = "Wins: " + wins + " Losses: " + losses;
+		document.getElementById("wrong").innerHTML = badLetters;
 	}
 
 	//initialize game
@@ -76,16 +77,16 @@
 		
 	}; 
 
-	if (answerKey===answerArr) {
+	
+	if (answerKey.toString()===answerArr.toString()) {
 			alert("you win");
 			wins++;
-			gameStart()
+			gameStart();
 		} else if (error >= 6) {
 			alert("you lose")
 			losses++;
-			gameStart()
+			gameStart();
 		};
-
 
 
 
