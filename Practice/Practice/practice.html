@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homework</title>
+	<!--reset on root-->
+	<link rel="stlyesheet" href="reset.css">
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+
+</head>
+<body>
+	<div class="row">
+		<div class="col-6">
+			<img class = "img-fluid" id = "static-base" src="pics/base.png">
+			<img class = "img-fluid" id = "static-1" src="pics/head.png">
+			<img class = "img-fluid" id = "static-2" src="pics/body.png">
+			<img class = "img-fluid" id = "static-3" src="pics/ArmL.png">
+			<img class = "img-fluid" id = "static-4" src="pics/ArmR.png">
+			<img class = "img-fluid" id = "static-5" src="pics/LegL.png">
+			<img class = "img-fluid" id = "static-6" src="pics/LegR.png">
+		</div>
+		<div class="col-6">
+			<div class = "row">
+				<div class = "answer"></div>
+			</div>
+			<div class = "row">
+				<div class = "badGuesses"></div>
+			</div>
+		</div>
+	</div>
+
+
+<style>
+	#static-base{
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	#static-1{
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		padding-left: 15px;
+		padding-right: 15px;
+		opacity:0.0;
+	}
+	#static-2{
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		padding-left: 15px;
+		padding-right: 15px;
+		opacity:0.0;
+	}
+	#static-3{
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		padding-left: 15px;
+		padding-right: 15px;
+		opacity:0.0;
+	}
+	#static-4{
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		padding-left: 15px;
+		padding-right: 15px;
+		opacity:0.0;
+	}
+	#static-5{
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		padding-left: 15px;
+		padding-right: 15px;
+		opacity:0.0;
+	}
+	#static-6{
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		padding-left: 15px;
+		padding-right: 15px;
+		opacity:0.0;
+	}
+</style>
+</body>
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+<script>
+	var possibleAnswers = ["dog", "cat", "mouse", "lion"]
+	var userAnswer;
+	var answer;
+	var answerKey;
+	var badLetters;
+	var error;
+	var winLoss = {
+		"wins":0,
+		"losses":0
+	};
+
+	function gameStart(){
+		badLetters =[];
+		answerKey = [];
+		answer = possibleAnswers[Math.floor(Math.random()*possibleAnswers.length)];
+		for (var i = 0; i < answer.length; i++) {
+		answerKey.push ("_");
+		error = 0;
+		document.getElementById("answer") = 
+	}
+
+	}
+
+	gameStart();
+	// console.log(answer);
+	// console.log(badLetters);
+	// console.log(answerKey);
+	// console.log(error);
+	
+	// console.log("answer array " +  answer);
+
+	
+
+	document.onkeypress = function (event) {
+		userAnswer=event.key.toLowerCase();
+		// console.log("unaltered answerKey " + answerKey)
+		if (answer.indexOf(userAnswer)===-1){
+			if(badLetters.indexOf(userAnswer)!== -1){
+				return;
+			}
+			error++;
+			console.log("error" , error);
+			badLetters.push(userAnswer);
+			console.log("badLetters" , badLetters);
+
+
+		}
+		for (var i = 0; i < answer.length; i++) {
+			if (userAnswer === answer[i]) {
+				answerKey[i] = userAnswer;
+			} 
+
+		}
+		console.log("altered answerKey " , answerKey);
+
+	
+		// console.log(event.key.toLowerCase())
+	}
+
+	// if (answerKey===answer) {
+	// 	alert("you win");
+	// 	winLoss.wins++;
+	// }
+
+
+</script>
+</html>
