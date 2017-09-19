@@ -71,22 +71,24 @@
 		console.log("answerKey ", answerKey);
 		console.log("answerArr ", answerArr);
 
+		
+
 		//evaluate if answer = answerKey, if true alert "you win", increment wins, reset game
 		//evaluate if error >= 6, if true alert "you lose", increment losses, reset game
-
+		if (answerKey.toString()===answerArr.toString()) {
+					alert("you win");
+					wins++;
+					gameStart();
+				} else if (error >= 6) {
+					alert("you lose")
+					losses++;
+					gameStart();
+				};
 		
 	}; 
 
 	
-	if (answerKey.toString()===answerArr.toString()) {
-			alert("you win");
-			wins++;
-			gameStart();
-		} else if (error >= 6) {
-			alert("you lose")
-			losses++;
-			gameStart();
-		};
+	
 
 
 
