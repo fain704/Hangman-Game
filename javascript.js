@@ -1,3 +1,5 @@
+
+
 	var possibleAnswers = ["DOG", "CAT", "HUMAN", "GIRRAFFE", "ZEBRA", "OWL", "TIGER", "LION", "ELEPHANT"]
 	var userAnswer;
 	var answer;
@@ -75,5 +77,30 @@
 					losses++;
 					gameStart();
 				};
-		
+
+
+		switch (error) {
+			case 1:
+				document.getElementById("dynamic").src="hangmanimgs/head.png";
+	 			document.getElementById("static-1").style.opacity=1.0;
+ 				break;
+			case 2:
+				document.getElementById("dynamic").src="hangmanimgs/body.png";
+		 		document.getElementById("static-2").style.opacity=1.0;
+		 		break;
+	 		case 3:
+	 			document.getElementById("dynamic").src="hangmanimgs/ArmL.png";
+		 		document.getElementById("static-3").style.opacity=1.0;
+		 		break;
+	 		case 4:
+	 			document.getElementById("dynamic").src="hangmanimgs/ArmR.png";
+		 		document.getElementById("static-4").style.opacity=1.0;
+		 		break;
+	 		case 5:
+	 			document.getElementById("dynamic").src="hangmanimgs/LegL.png";
+		 		document.getElementById("static-5").style.opacity=1.0;
+		 		break;
+	 		case 6:
+	 			break;
+		}
 	}; 
